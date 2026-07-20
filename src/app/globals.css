@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #231F20;
+  --color-foreground: #FFFFFF;
+  
+  --color-card: #282425;
+  --color-card-foreground: #FFFFFF;
+  
+  --color-popover: #2F2B2C;
+  --color-popover-foreground: #FFFFFF;
+  
+  --color-primary: #11BDF2;
+  --color-primary-foreground: #ffffff;
+  
+  --color-secondary: #62D3F6;
+  --color-secondary-foreground: #231F20;
+  
+  --color-muted: rgba(255, 255, 255, 0.05);
+  --color-muted-foreground: #D2E8EF;
+  
+  --color-accent: #D2E8EF;
+  --color-accent-foreground: #231F20;
+  
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #11BDF2;
+  
+  --color-text-main: #FFFFFF;
+  --color-text-gray: #D2E8EF;
+
+  --radius-lg: 1rem;
+  --radius-md: calc(1rem - 2px);
+  --radius-sm: calc(1rem - 4px);
+
+  --font-heading: var(--font-poppins), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .glass-card {
+    background-color: rgba(14, 39, 70, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  }
+  .glow {
+    box-shadow: 0 0 30px rgba(8, 169, 230, 0.3);
+  }
+  .glow-hover:hover {
+    box-shadow: 0 0 40px rgba(8, 169, 230, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+}
